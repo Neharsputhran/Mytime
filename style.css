@@ -320,7 +320,7 @@ a:hover,a:visited{
     
 }
 /* feedback */
-.feedback{
+#feedback{
     background-color:#89d595;
     height : 100vh;;
     width: 100%;
