@@ -1,0 +1,379 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+a:is(:link, :active, :visited).active{
+    color: white;
+    background-color: black;
+}
+
+
+li a:is(:link, :active, :visited){
+    color: black;
+    text-decoration: none;
+}
+.home{
+    /* background-color:#354788; */
+    background-image: url("homeback.png");
+    height : 100vh;
+    width: 100%;
+    position: relative;
+}
+.imgcontainer{
+    float: right;
+    margin-top: 90px;
+    width: 600px;
+    height:600px;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    background-image: url("another.jpg");
+}
+.info{
+    position: absolute;;
+    font-size: 40px;
+    top: 200px;
+    margin: 100px;
+}
+
+/* stopwatch page */
+.stopwatch{
+    background-color: blueviolet;
+    height: 100vh;;
+    width:100%;
+}
+/* Logo */
+label.logo{
+    
+    font-family: Georgia, serif;
+    color: #354788;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+
+}
+/* Navigation */
+nav{
+    z-index:1;
+   position: fixed;
+    background: burlywood;
+    height: 80px;
+    width: 100%;
+}
+nav ul {
+   
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+  
+    display: inline-block;
+    line-height: 80px;
+    margin:0 5px;
+   
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(202, 100, 100);
+    padding: 7px 13px;
+    font-size: 17px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+a:hover,a:visited{
+    background: #FFF9B0;
+    transition: .5s;
+    
+}
+.checkbtn{
+    font-size: 30px;
+    float: right;
+    color: #f6f4f4;
+    line-height: 80px;
+    margin-right: 40px;
+    display: none;
+
+}
+#check{
+    display: none;
+}
+/* To show hamburger icon when screen is made short for menu */
+@media (max-width:952px){
+   
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width:858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #354788;
+        top:80px;
+        left: -858px;
+        text-align: center;
+        transition: all .5s;
+    }
+   
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+       
+    }
+    a:hover{
+      
+       color: rgb(188, 220, 133);
+    }
+    a:active{
+        color: rgb(188, 220, 133);
+    
+    }
+    #check:checked~ul{
+        left:0;
+
+    }
+
+    a:checked~ul{
+        left:-858px
+    }
+    /* a:{
+        left: -858px; 
+    } */
+
+
+}
+/* Stop watch main container */
+.container{
+    z-index:0;
+    background-color: aliceblue;
+    width: 40%;
+    min-width: 500px;
+    position: relative;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding: 28px 0;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(41, 39, 39);
+    
+}
+
+.timer-display{
+    position: relative;
+    width: 92%;
+    background: white;
+    left: 4%;
+    font-family: 'Roboto mono',monospace;
+    color: blueviolet;
+    font-size: 30px;
+    padding: 40px;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgb(63, 63, 74);
+}
+
+.buttons{
+    width: 90%;
+    margin:60px auto 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons button{
+    width: 120px;
+    height: 45px;
+    background-color: blueviolet;
+    color: azure;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+/* different color for all buttons */
+.buttons button:nth-child(2){
+    background-color: red;
+}
+.buttons button:nth-child(1){
+    background-color: rgb(95, 132, 95);
+}
+.buttons button:nth-child(3){
+    background-color: rgb(221, 128, 94);
+}
+.buttons button:hover{
+    box-shadow: 0 0 20px rgb(207, 213, 142);
+}
+/* Clock page */
+.clock{
+    background-color:#5bafc4;
+    height : 100vh;;
+    width: 100%;
+    position: relative;
+}
+#clock1{
+    z-index: 0;
+    text-align: center;
+    font-size: 100px;
+    background-color: rgb(248, 249, 249);
+    color: rgb(12, 79, 71);
+    width: 60%;
+    font-family: 'Roboto mono',monospace;
+    font-size: 30px;
+    height: 20%;
+    padding: 10px;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgb(49, 49, 56);
+   
+}
+/* #clocktype{
+    width: 12%;
+    height: 6%;
+    position:absolute;
+    background-color: rgb(14, 14, 15);
+    color: rgb(251, 253, 253);
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    outline: none;
+    top: 62%;
+    left:44%;
+
+} */
+/* #clocktype:hover{
+    box-shadow: 0 0 20px rgb(21, 21, 17);
+} */
+/* timer */
+
+#timer{
+    background-color:#a85bc4;
+    height : 100vh;;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.timercontainer{
+    font-family: sans-serif;
+    display: inline-block;
+    padding: 4% 4% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    position: absolute;
+    /* margin: 20px auto; */
+    border-radius: 30px;
+    background: white;
+    box-shadow: 0 0 20px rgb(49, 49, 56);
+}
+
+
+.timer__part{
+    font-size: 50px;
+    font-weight: bold;
+}
+.timer__btn{
+    width: 50px;
+    height: 50px;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background-color: #EC53B0;
+}
+.timer__btn--start{
+    background: #00b84c;
+
+}
+.timer__btn--stop{
+    background: red;
+    
+}
+/* feedback */
+.feedback{
+    background-color:#89d595;
+    height : 100vh;;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+   
+}
+form{
+    position: absolute;   
+}
+table{
+    
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+    border: 2px ;
+    box-shadow: 0 0 20px rgb(49, 49, 56);
+    background-color: rgb(255, 255, 255);
+    border-radius: 14px;
+    text-align: left;
+}
+
+tr,td{
+    margin: 10px;
+
+}
+.feedbacktext{
+    position: absolute;;
+    font-size: 40px;
+    top: 100px;
+    font-family: Georgia, serif;
+     margin: 10px;
+}
+input{
+    border-radius: 5px;
+    padding: 3px;
+  
+    border-collapse: collapse;
+
+}
+textarea{
+    border-radius: 5px;
+    padding: 3px;
+  
+    border-collapse: collapse;
+
+}
+#submit{
+ 
+    background-color: #89d595;
+    padding: 10px 15px;
+    border: none;
+}
