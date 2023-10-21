@@ -1,1 +1,1 @@
-# Mytime https://mytime-theta.vercel.app/#feedback
+# Mytime https://mytime-theta.vercel.app
