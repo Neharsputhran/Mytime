@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Navigation bar with menu -->
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo">My Time</label>
+        <ul class="list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#clock">Clock</a></li>
+            <li><a href="#stopwatch">Stop-Watch</a></li>
+            <li><a href="#timer">Timer</a></li>    
+        </ul>
+    </nav>
+    <!-- Home page -->
+    <div class="home" id="home" >
+    <div class="info"><p><b>Life</b> teaches us <br>to make good use of <b>Time</b>,<br>while <b>Time</b> teaches us <br>the value of <b>Life</b></p>
+
+    </div>
+    <!-- <div class="imgcontainer"> -->
+        
+    </div>
+       
+    </div>
+    <!-- For clock -->
+    <div class="clock" id="clock">
+        
+        
+            <p id="clock1">
+
+            </p>
+
+    <!-- <input type="button" id="clocktype" value="12 hours" >   -->
+    </div>
+<!-- Stopwatch page -->
+    <div class="stopwatch" id="stopwatch">
+        <div class="container">
+            <div class="timer-display">
+                00 : 00 : 00 : 000
+            </div>
+            <div class="buttons">
+                <button id="start-timer">Start</button>
+                <button id="stop-timer">Stop</button>
+                <button id="reset-timer">Reset</button>
+    
+            </div>
+        </div>   
+    </div>
+  <!-- Timer page   -->
+  <div id="timer">
+    
+    <div class="timercontainer">
+ 
+    
+    
+    </div>
+  </div>
+  <script src="timer.js" type="module"></script>
+  <!-- Feedback -->
+  <div class="feedback">
+    <div class="feedbacktext">
+        <p>Feedback</p>
+    </div>
+    <form action="https://formsubmit.co/01844b56b4ecb4dad7bec90264050f6e" method="POST">
+        <table>
+            <!-- <center> -->
+            <tr>
+                <td><label>Name:</label></td>
+             </tr>
+            <tr>  
+                <td><input type="text" id="name" name="name" placeholder="Enter your name"></td>
+            </tr>
+            <tr>
+                <td><label>Email:</label></td> 
+            </tr>
+            <tr>
+               <td><input type="email" id="email" name="email" placeholder="Enter your email"></td>
+            </tr>
+            <tr>       
+                <td><label>Give your thoughts about this website:</label></td>
+            </tr>
+            <tr>      
+                <td><textarea name="messages" rows="3" cols="30" id="message"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="submit" id="submit" value="Submit"></p></td>
+            </tr>
+        <!-- </center> -->
+        </table>
+    
+    </form>
+    
+   
+  </div>
+    
+    <script src="script.js"></script>
+   
+    <script src="https://kit.fontawesome.com/f4e815f78b.js" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>
