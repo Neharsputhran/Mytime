@@ -102,69 +102,12 @@ a:hover,a:visited{
 #check{
     display: none;
 }
-/* To show hamburger icon when screen is made short for menu */
-@media (max-width:952px){
-   
-    label.logo{
-        font-size: 30px;
-        padding-left: 50px;
-    }
-    nav ul li a{
-        font-size: 16px;
-    }
-}
-@media (max-width:858px){
-    .checkbtn{
-        display: block;
-    }
-    ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #354788;
-        top:80px;
-        left: -858px;
-        text-align: center;
-        transition: all .5s;
-    }
-   
-    nav ul li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a{
-        font-size: 20px;
-       
-    }
-    a:hover{
-      
-       color: rgb(188, 220, 133);
-    }
-    a:active{
-        color: rgb(188, 220, 133);
-    
-    }
-    #check:checked~ul{
-        left:0;
 
-    }
-
-    a:checked~ul{
-        left:-858px
-    }
-    /* a:{
-        left: -858px; 
-    } */
-
-
-}
 /* Stop watch main container */
 .container{
     z-index:0;
     background-color: aliceblue;
-    width: 40%;
-    min-width: 500px;
+    width: 50%;
     position: relative;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -252,7 +195,7 @@ a:hover,a:visited{
     box-shadow: 0 0 20px rgb(49, 49, 56);
    
 }
-/* #clocktype{
+#clocktype{
     width: 12%;
     height: 6%;
     position:absolute;
@@ -266,10 +209,10 @@ a:hover,a:visited{
     top: 62%;
     left:44%;
 
-} */
-/* #clocktype:hover{
+}
+#clocktype:hover{
     box-shadow: 0 0 20px rgb(21, 21, 17);
-} */
+}
 /* timer */
 
 #timer{
@@ -320,7 +263,7 @@ a:hover,a:visited{
     
 }
 /* feedback */
-#feedback{
+.feedback{
     background-color:#89d595;
     height : 100vh;;
     width: 100%;
@@ -351,7 +294,7 @@ tr,td{
 
 }
 .feedbacktext{
-    position: absolute;;
+    position: absolute;
     font-size: 40px;
     top: 100px;
     font-family: Georgia, serif;
@@ -376,4 +319,92 @@ textarea{
     background-color: #89d595;
     padding: 10px 15px;
     border: none;
+}
+
+/* To show hamburger icon when screen is made short for menu */
+@media (max-width:952px){
+   
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width:858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #354788;
+        top:80px;
+        left: -858px;
+        text-align: center;
+        transition: all .5s;
+    }
+   
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+       
+    }
+    a:hover{
+      
+       color: rgb(188, 220, 133);
+    }
+    a:active{
+        color: rgb(188, 220, 133);
+    
+    }
+    #check:checked~ul{
+        left:0;
+
+    }
+
+    a:checked~ul{
+        left:-858px
+    }
+    
+    /* a:{
+        left: -858px; 
+    } */
+    .timer-display{
+        font-size: 25px;
+
+    }
+    .buttons button{
+        width: 100px;
+    }
+
+}
+@media (max-width:400px){
+    .container{
+        width: 90%;
+    }
+    .timer-display{
+        font-size: 22px;
+
+    }
+    .buttons button{
+        width: 90px;
+    }
+    #clock1{
+        width: 80%;
+        left:10%;
+    }
+    #clocktype{
+        width: 25%;
+        left: 40%;
+    }
+    .timercontainer{
+        width:350px;
+    }
 }
