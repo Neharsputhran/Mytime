@@ -35,98 +35,50 @@ document.getElementById("reset-timer").addEventListener("click",() => {
         timeRef.innerHTML = "00 : 00 : 00 : 000 ";
 });
 
-function displayTimer(){
-    milliseconds +=10;
-    if(milliseconds == 1000){
-        milliseconds=0;
-        seconds++;
-        if(seconds==60){
-            seconds=0;
-            minutes++;
-            if(minutes==60){
-                minutes=0;
-                hours++;
-            }
+
+// Clock
+var is12HourFormat = false;
+
+function displayClock() {
+    var d = new Date();
+    var hour = d.getHours();
+    var minute = d.getMinutes();
+    var sec = d.getSeconds();
+    var amOrpm = "AM";
+
+    if (is12HourFormat) {
+        if (hour > 12) {
+            hour -= 12;
+            amOrpm = "PM";
+        } else if (hour === 0) {
+            hour = 12;
+            amOrpm = "AM";
+        } else if (hour === 12) {
+            amOrpm = "PM";
+        } else {
+            amOrpm = "AM";
         }
     }
-    let h= hours<10 ? "0" +hours:hours;
-    let m= minutes<10 ? "0" +minutes:minutes;
-    let s= seconds<10 ? "0" +seconds:seconds;
-    let ms= milliseconds < 10 ? "00" +milliseconds:milliseconds<100 ? "0"+milliseconds:milliseconds;
+    else if (hour > 12) {
+       
+        amOrpm = "PM";
+    }
 
-    timeRef.innerHTML=`${h} : ${m} : ${s} : ${ms}`;
+    hour = (hour < 10) ? "0" + hour : hour;
+    minute = (minute < 10) ? "0" + minute : minute;
+    sec = (sec < 10) ? "0" + sec : sec;
+
+    document.getElementById("clock1").innerHTML = hour + " : " + minute + " : " + sec + " " + amOrpm;
 }
-// till here
-// script for digital clock
 
-
-
-
-function displayclock(){
-    var d=new Date();
-    var hour=d.getHours();
-    var minute=d.getMinutes();
-    var sec=d.getSeconds();
-    var amOrpm="AM";
-    if(hour<10)
-    {
-        hour="0"+hour;
-    }
-    if(minute<10)
-    {
-        minute="0"+minute;
-    }
-    if(sec<10)
-    {
-        sec="0"+sec;
-    }
-    if(hour>=12)
-    {
-       amOrpm="PM";
-    }
-
-    if(hour>12)
-    {
-        hour=hour-12;
-    }
-    document.getElementById("clock1").innerHTML=hour+" : "+minute+" : "+sec+" "+amOrpm;
+function toggleClockType() {
+    is12HourFormat = !is12HourFormat;
+    document.getElementById("clocktype").value = is12HourFormat ? "12 hours" : "24 hours";
+    displayClock(); // Update the clock display after changing the clock type
 }
-setInterval(displayclock, 1000);    
-    // document.getElementById("clocktype").addEventListener("click",() => {
 
-    //     var d=new Date();
-    //     var hour=d.getHours();
-    //     var minute=d.getMinutes();
-    //     var sec=d.getSeconds();
-    //     var amOrpm="AM";
-    //     if(hour>=12)
-    //     {
-    //               amOrpm="PM";
-    //     }
-    //     var current_id=document.getElementById("clocktype").value;
-    //     if(current_id=="12 hours") 
-    //     {
-    //         document.getElementById("clocktype").value="24 hours";
-    //            if(hour>12)
-    //            {
-    //              hour=hour-12;
-    //            } 
-    //            document.getElementById("clock1").innerHTML=hour+" : "+minute+" : "+sec+" "+amOrpm;   
-    //         //    return hour,sec,minute;
-               
-    //     }           
-    //     else
-    //     {
-    //         document.getElementById("clocktype").value="12 hours";
-    //         // hour=hour+12;
-    //         document.getElementById("clock1").innerHTML=hour+" : "+minute+" : "+sec+" "+amOrpm;
-            
-    //     }
-        
-        
-    // })
-  
-
+setInterval(displayClock, 1000);
+document.getElementById("clocktype").addEventListener("click", toggleClockType);
 
 // // timer
 // import Timer from "./timer.js";
