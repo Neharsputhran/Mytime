@@ -73,7 +73,7 @@ function displayClock() {
 
 function toggleClockType() {
     is12HourFormat = !is12HourFormat;
-    document.getElementById("clocktype").value = is12HourFormat ? "12 hours" : "24 hours";
+    document.getElementById("clocktype").value = is12HourFormat ? "24 hours" : "12 hours";
     displayClock(); // Update the clock display after changing the clock type
 }
 
